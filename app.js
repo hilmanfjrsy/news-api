@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const serverless = require('serverless-http');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -38,4 +39,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use('/.netlify/functions/app', indexRouter);  // path must route to lambda (express/server.js)
+
 module.exports = app;
+module.exports.handler = serverless(app);
