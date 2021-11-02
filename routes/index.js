@@ -9,7 +9,7 @@ router.get('/:path', async function (req, res, next) {
 
   var url = 'https://newsapi.org/v2' + path + '&apiKey=' + apiKey
   var response = await axios.get(url)
-  return res.send('response.data');
+  return res.send(response.data);
 });
 
 module.exports = router;
