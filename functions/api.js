@@ -23903,9 +23903,7 @@ router.get("/:path", async function (req, res) {
   var path = req.originalUrl.replace('/.netlify/functions/api', '');
   var url = 'https://newsapi.org/v2' + path + '&apiKey=' + apiKey;
   var response = await axios.get(url);
-  return res.send({
-    data: response.data
-  });
+  return res.send(response.data);
 });
 app.use(`/.netlify/functions/api`, router);
 module.exports = app;
