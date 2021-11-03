@@ -1,8 +1,10 @@
 const express = require("express");
 const axios = require("axios");
+var cors = require('cors')
 const serverless = require("serverless-http");
 
 const app = express();
+app.use(cors())
 const router = express.Router();
 
 router.get("/:path", async function (req, res){
