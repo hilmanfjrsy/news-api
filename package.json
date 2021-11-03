@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "netlify-lambda build bin",
+    "postinstall": "netlify-lambda install",
     "start": "node ./bin/www"
   },
   "dependencies": {
