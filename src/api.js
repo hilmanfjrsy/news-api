@@ -8,7 +8,7 @@ app.use(cors())
 const router = express.Router();
 
 router.get("/:path", async function (req, res){
-  var apiKey = '13cd61f5fd174979a8a0cc3c94b3628d'
+  var apiKey = '7e5b14a5c6fd48889f617e580beba0cb'
   var path = req.originalUrl.replace('/.netlify/functions/api','')
 
   var url = 'https://newsapi.org/v2' + path + '&apiKey=' + apiKey
